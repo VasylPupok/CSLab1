@@ -1,0 +1,64 @@
+﻿<Window x:Class="Lab1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" MinHeight="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto" MinHeight="30"/>
+        </Grid.RowDefinitions>
+
+        <!-- message pannel -->
+        <Grid Name="_messageGrid" Grid.Row="0">
+            
+        </Grid>
+        
+        <!-- all stuff -->
+        <Grid Name="_mainContentGrid" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Grid.Row="1" Grid.RowSpan="3">
+
+
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <TextBlock TextBlock.Text="User info" TextBlock.FontSize="23" TextBlock.TextAlignment="Center" Grid.Row="0"/>
+                <TextBlock Name="_ageBlock" TextBlock.Text="Age: " TextBlock.FontSize="23" TextBlock.TextAlignment="Left" Margin="20,0,0,0" Grid.Row="1"/>
+                <TextBlock Name="_zodiacBlock" TextBlock.Text="Zodiac: " TextBlock.FontSize="23" TextBlock.TextAlignment="Left" Margin="20,0,0,0" Grid.Row="2"/>
+                <TextBlock Name="_zodiacBlockChinese" TextBlock.Text="Zodiac(chinese): " TextBlock.FontSize="23" TextBlock.TextAlignment="Left" Margin="20,0,0,0" Grid.Row="3"/>
+            </Grid>
+
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <DatePicker Name="_dateInput" SelectedDateChanged="birthdaySet" Grid.Row="0" Margin ="0, 15, 0, 5" MinHeight="30" MaxHeight="45"/>
+                <TextBlock Name="_happyBirthdayText" FontSize="20" Grid.Row="1"/>
+            </Grid>
+
+        </Grid>
+
+        <!-- warning pannel -->
+        <Grid Name="_warningGrid" Grid.Row="2">
+            <TextBlock Name="_warningTextBlock" Foreground="Red" FontSize="20" TextAlignment="Center"></TextBlock>
+        </Grid>
+        
+    </Grid>
+</Window>
